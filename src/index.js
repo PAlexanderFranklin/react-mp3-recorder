@@ -8,7 +8,7 @@ import classNames from 'classnames'
 
 import vmsg from './vmsg'
 
-import micIcon from './mic-icon-white.svg'
+import { BsMicFill } from 'react-icons/bs';
 import wasmURL from './vmsg.wasm'
 
 import styles from './styles.css'
@@ -55,10 +55,12 @@ export default class Recorder extends Component {
       >
         <div
           className={styles.button}
+          onTouchStart={this._onMouseDown}
+          onTouchEnd={this._onMouseUp}
           onMouseDown={this._onMouseDown}
           onMouseUp={this._onMouseUp}
         >
-          <img src={micIcon} width={24} height={24} />
+          <BsMicFill />
         </div>
       </div>
     )
